@@ -42,7 +42,7 @@ class CruiseManager {
     }
 
     public function getAvailableCruiseTrips(Cruise $line) {
-        return $line->getAvailableTrips();
+        //return $line->getAvailableTrips();
         // returns all trips for the cruise referenced
         // by line that have vessels with cabins that are not booked.
         // This operation also prints a list of the number of available cabins

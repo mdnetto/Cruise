@@ -17,7 +17,7 @@ class VesselTrip {
 	}
 
 	public function getNumAvailableCabins() {
-		return $
+		//return $
 		// :Integer[3] – Returns the number of available cabins in economy,
 		// family and premium classes for the trip.
 	}
