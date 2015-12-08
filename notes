@@ -1,0 +1,8 @@
+
+$cruise is instance of Cruise
+$port is insstance of Port
+$trips is instance of Vesseltrip
+$ships is instance of Vessel
+$cabins is instance of Cabin
+$trip_booking is instance of CabinBooking
+
