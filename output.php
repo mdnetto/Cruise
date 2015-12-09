@@ -17,6 +17,9 @@ $new_port = $cm1->createPort('St Martin');
 $c1 = $cm1->createCruise($cruiseName1, $ports1);
 
 $new_port->addCruise($c1);
+var_dump($c1);
+//var_dump($c1);
+//var_dump($new_port);
 
 $v1 = $cm1->createVessel(1, 120, 100, 80);
 
@@ -24,7 +27,7 @@ $t1 = $cm1->createCruiseTrip($c1, $date1, 1, $v1);
 $t2 = $cm1->createCruiseTrip($c1, $date2, 2, $v1);
 
 $cm1->displaySystemDetails($c1, $v1);
-$cm1->getAvailableCruiseTrips($c1); //returns $t1 and $t2 if they have free cabins
+//$cm1->getAvailableCruiseTrips($c1); //returns $t1 and $t2 if they have free cabins
 
 
 $cruiseName2 = 'ALASK';

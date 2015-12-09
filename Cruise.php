@@ -26,8 +26,10 @@ class Cruise extends CruiseManager {
 	}
 
 	public function getAvailableTrips(Cruise $line) {
+		var_dump($line);
+		//$trips = $line->
+		//getNumAvailableCabins($trip);
 
-		return getNumAvailableCabins();
 		//List of VesselTripDetails – returns all vessel trips with number of available
 		//cabins in each cabin class. An instance of VesselTripDetails is an
 		//object consisting of four fields: Vessel Trip reference, number of available

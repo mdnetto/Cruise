@@ -25,7 +25,6 @@ class CruiseManager {
     }
 
     public function createVessel($shipID, $numEcon, $numFamily, $numPremium) {
-
         return new Vessel($shipID, $numEcon, $numFamily, $numPremium);
         // Vessel - creates a vessel with vesselID given by shipID. The number
         // of Economy, Family and Premium cabins in the vessel are given by
@@ -42,7 +41,7 @@ class CruiseManager {
     }
 
     public function getAvailableCruiseTrips(Cruise $line) {
-        //return $line->getAvailableTrips();
+        return $line->getAvailableTrips();
         // returns all trips for the cruise referenced
         // by line that have vessels with cabins that are not booked.
         // This operation also prints a list of the number of available cabins
