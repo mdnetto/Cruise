@@ -7,21 +7,12 @@ require_once 'Port.php';
 
 class CruiseManager {
 
-    //public function __construct() {
-    //}
-
     public function createCruise($cruiseName, array $ports) {
-        return new Cruise($cruiseName,  $ports, $date);
-        // creates a cruise with name cruiseName and ports referenced in the
-        // array ports. The new cruise has no vessels associated with it.
-        // The operation returns a reference to the created cruise.
+        return new Cruise($cruiseName,  $ports);
     }
 
     public function createPort($portID) {
         return new Port($portID);
-        // creates a port with code portID and links it to the CruiseManager
-        // object. The operation returns a reference to the created port.
-
     }
 
     public function createVessel($shipID, $numEcon, $numFamily, $numPremium) {

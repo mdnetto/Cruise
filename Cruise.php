@@ -3,7 +3,7 @@
 require_once 'CruiseManager.php';
 require_once 'VesselTrip.php';
 
-class Cruise extends CruiseManager {
+class Cruise {
 
 	public $cruiseName; // CARIB, EURO, MED, ALASK
 	public $ports = array();
@@ -26,8 +26,7 @@ class Cruise extends CruiseManager {
 	}
 
 	public function getAvailableTrips(Cruise $line) {
-		var_dump($line);
-
+    }
 
 	public function bookTrip(VesselTrip $trip, CabinClass $class) {
 
