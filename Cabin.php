@@ -2,8 +2,13 @@
 
 class Cabin {
 
-	public $cabinNum; // int
-	public $section; //'ECONOMY, FAMILY, PREMIUM';
+	const ECONOMY = 'economy';
+	const FAMILY = 'family';
+	const PREMIUM = 'premium';
+
+	public function __construct($class) {
+		$this->class = $class;
+	}
 
 	public function hasBooking(VesselTrip $trip) {
 		//:Boolean – Returns true if the cabin is booked for the vessel trip,
@@ -22,5 +27,3 @@ class Cabin {
 		//the trip passed in as a parameter.
 	}
 }
-
-

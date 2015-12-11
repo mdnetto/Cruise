@@ -3,6 +3,7 @@
 require_once 'Cruise.php';
 require_once 'Ship.php';
 require_once 'Port.php';
+require_once 'Cabin.php';
 
 class CruiseManager {
 
@@ -26,8 +27,8 @@ class CruiseManager {
         return $cruise->getAvailableTrips();
     }
 
-    public function bookCruise(Cruise $cruise, VesselTrip $trip, CabinClass $class) {
-
+    public function bookCruise($cruiseID, cabin $class) {
+        return Cruise::bookTrip($cruiseID, $class);
     }
 
     public function displaySystemDetails(array $cruises) {

@@ -1,6 +1,5 @@
 <?php
 
-// require_once 'ShipTripDetails.php';
 
 class Ship {
 
@@ -17,12 +16,10 @@ class Ship {
 	}
 
 	public function getNumAvailableCabins(ShipTrip $trip) {
-		//:Integer[3] – Returns the number of available cabins in economy,
-		//family and premium classes for the trip passed in as a parameter.
+
 	}
 
 	public function displayShipDetails(ShipTrip $trip) {
-		// – displays information on cabins and bookings made for the trip
-		//passed in as a parameter.
+
 	}
 }
