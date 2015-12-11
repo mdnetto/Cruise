@@ -31,6 +31,7 @@ class CruiseManager {
     }
 
     public function displaySystemDetails(array $cruises) {
-        return Cruise::displayCruiseDetails($cruises);
+        $cruises = Cruise::displayCruiseDetails($cruises);
+
     }
 }

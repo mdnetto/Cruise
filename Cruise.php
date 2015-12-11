@@ -37,7 +37,10 @@ class Cruise {
         $ship = $cruise->ship;
         echo "
         <p>Date: $cruise->date</p>
-        <p>Ship: $ship->shipID</p>
+        <p>Ship: $ship->shipID Available Cabins: <br>
+        	Economy: $ship->numEcon<br>
+        	Family: $ship->numFamily<br>
+        	Premium: $ship->numPremium<br>
         </p>
         =======================================";
 	}

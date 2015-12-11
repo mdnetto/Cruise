@@ -18,8 +18,10 @@ $carib_ship = $cruise_manager->createShip(1, 120, 100, 80);
 $cruise1 = $cruise_manager->createCruise(01, $carib_cruise_name, $carib_ports, $date1, $carib_ship);
 $cruise2 = $cruise_manager->createCruise(02, $carib_cruise_name, $carib_ports, $date2, $carib_ship);
 
-$new_port = $cruise_manager->createPort('St Martin');
-$new_port->addCruise($cruise1);
+$new_port1 = $cruise_manager->createPort('St Martin');
+$new_port1->addCruise($cruise1);
+
+
 
 $alask_cruise_name = 'ALASK';
 $alask_ports = array(
@@ -32,6 +34,9 @@ $alask_ship = $cruise_manager->createShip(2, 400, 200, 100);
 
 $cruise3 = $cruise_manager->createCruise(03, $alask_cruise_name, $alask_ports, $date1, $alask_ship);
 $cruise4 = $cruise_manager->createCruise(04, $alask_cruise_name, $alask_ports, $date1, $alask_ship);
+
+$new_port2 = $cruise_manager->createPort('Saskatoon');
+$new_port2->addCruise($cruise4);
 
 $cruises = [$cruise1, $cruise2, $cruise3, $cruise4];
 $cruise_manager->displaySystemDetails($cruises);
