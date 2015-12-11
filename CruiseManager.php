@@ -11,7 +11,7 @@ class CruiseManager {
     //}
 
     public function createCruise($cruiseName, array $ports) {
-        return new Cruise($cruiseName,  $ports);
+        return new Cruise($cruiseName,  $ports, $date);
         // creates a cruise with name cruiseName and ports referenced in the
         // array ports. The new cruise has no vessels associated with it.
         // The operation returns a reference to the created cruise.
