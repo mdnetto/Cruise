@@ -2,49 +2,36 @@
 
 require_once 'CruiseManager.php';
 
-$cm1 = new CruiseManager();
+$cruise_manager = new CruiseManager();
 
-$cruiseName1 = 'CARIB';
-$date1 = '01/12/2016'; //mm/dd/yyy
+$carib_cruise_name = 'CARIB';
+$date1 = '01/12/2016';
 $date2 = '01/12/2017';
-$ports1 = array(
-	$cm1->createPort('Barbados'),
-	$cm1->createPort('Havana'),
-	$cm1->createPort('San Juan'));
 
-$new_port = $cm1->createPort('St Martin');
+$carib_ports = array(
+	$cruise_manager->createPort('Barbados'),
+	$cruise_manager->createPort('Havana'),
+	$cruise_manager->createPort('San Juan'));
 
-$c1 = $cm1->createCruise($cruiseName1, $ports1);
+$carib_ship = $cruise_manager->createShip(1, 120, 100, 80);
 
-$new_port->addCruise($c1);
-var_dump($c1);
-//var_dump($c1);
-//var_dump($new_port);
+$cruise1 = $cruise_manager->createCruise(01, $carib_cruise_name, $carib_ports, $date1, $carib_ship);
+$cruise2 = $cruise_manager->createCruise(02, $carib_cruise_name, $carib_ports, $date2, $carib_ship);
 
-$v1 = $cm1->createVessel(1, 120, 100, 80);
+$new_port = $cruise_manager->createPort('St Martin');
+$new_port->addCruise($cruise1);
 
-$t1 = $cm1->createCruiseTrip($c1, $date1, 1, $v1);
-$t2 = $cm1->createCruiseTrip($c1, $date2, 2, $v1);
+$alask_cruise_name = 'ALASK';
+$alask_ports = array(
+	$cruise_manager->createPort('Glacier Bay'),
+	$cruise_manager->createPort('Juneau'),
+	$cruise_manager->createPort('Ketchikan'),
+	$cruise_manager->createPort('Sitka'),
+	$cruise_manager->createPort('Vancouver'));
+$alask_ship = $cruise_manager->createShip(2, 400, 200, 100);
 
-$cm1->displaySystemDetails($c1, $v1);
-//$cm1->getAvailableCruiseTrips($c1); //returns $t1 and $t2 if they have free cabins
+$cruise3 = $cruise_manager->createCruise(03, $alask_cruise_name, $alask_ports, $date1, $alask_ship);
+$cruise4 = $cruise_manager->createCruise(04, $alask_cruise_name, $alask_ports, $date1, $alask_ship);
 
-
-$cruiseName2 = 'ALASK';
-$ports2 = array(
-	$cm1->createPort('Glacier Bay'),
-	$cm1->createPort('Juneau'),
-	$cm1->createPort('Ketchikan'),
-	$cm1->createPort('Sitka'),
-	$cm1->createPort('Vancouver'));
-
-$c2 = $cm1->createCruise($cruiseName2, $ports2);
-$v2 = $cm1->createVessel(2, 400, 200, 100);
-$t1 = $cm1->createCruiseTrip($c2, $date1, 1, $v2);
-$t2 = $cm1->createCruiseTrip($c2, $date2, 2, $v2);
-$cm1->displaySystemDetails($c2, $v2);
-
-//cm = cruiseManager
-//c = cruise
-//v = vessel
-//t = trip
+$cruises = [$cruise1, $cruise2, $cruise3, $cruise4];
+$cruise_manager->displaySystemDetails($cruises);

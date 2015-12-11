@@ -5,7 +5,6 @@ class Cabin {
 	public $cabinNum; // int
 	public $section; //'ECONOMY, FAMILY, PREMIUM';
 
-
 	public function hasBooking(VesselTrip $trip) {
 		//:Boolean – Returns true if the cabin is booked for the vessel trip,
 		// trip; false otherwise.

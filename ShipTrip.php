@@ -1,6 +1,6 @@
 <?php
 
-class VesselTrip {
+class ShipTrip {
 
 	public $tripID;
 	public $tripDate;

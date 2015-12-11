@@ -1,7 +1,7 @@
 <?php
 
 
-class VesselTripDetails extends VesselTrip {
+class ShipTripDetails extends ShipTrip {
 
 	public $availEcon; //int
 	public $availFamily; //int
