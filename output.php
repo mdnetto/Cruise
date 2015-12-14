@@ -1,6 +1,9 @@
 <?php
 
 require_once 'CruiseManager.php';
+require_once 'Cabin.php';
+
+$i = 0;
 
 $cruise_manager = new CruiseManager();
 
@@ -18,10 +21,12 @@ $carib_ship = $cruise_manager->createShip(1, 120, 100, 80);
 $cruise1 = $cruise_manager->createCruise(01, $carib_cruise_name, $carib_ports, $date1, $carib_ship);
 $cruise2 = $cruise_manager->createCruise(02, $carib_cruise_name, $carib_ports, $date2, $carib_ship);
 
-
-$class = 'family';
+$class = Cabin::FAMILY;
 $family_cabin = new Cabin($class);
-$booking = $cruise_manager->bookCruise($cruise1, $family_cabin);
+
+for ($i; $i<100; $i++) {
+	$booking = $cruise_manager->bookCruise($cruise1, $family_cabin);
+}
 
 $new_port1 = $cruise_manager->createPort('St Martin');
 $new_port1->addCruise($cruise1);

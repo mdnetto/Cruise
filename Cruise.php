@@ -20,22 +20,23 @@ class Cruise {
 		$ports = array_push($this->ports, $port);
 	}
 
-	public function getAvailableTrips() {
-		$ship = $this->ship;
+	public function getAvailableTrips($cruises) {
+		foreach ($cruises as $cruise) {
+		}
+
+		var_dump($availEcon | $availPremium | $availFamily);
 	}
 
 	public function bookTrip(Cruise $cruise, Cabin $class) {
 		$ship = $cruise->ship;
+		$bookedFamily = $cruise->bookedFamily;
+
 		if ($class == Cabin::ECONOMY) {
 			$cruise->bookedEcon = $cruise->bookedEcon + 1;
-			$cruise->availableEcon = $ship->numEcon - $cruise->bookedEcon;
-			//why can't I do += here?
 		} elseif ($class == Cabin::PREMIUM) {
 			$cruise->bookedPremium = $cruise->bookedPremium + 1;
-			$cruise->availPremium = $ship->numPremium - $cruise->bookedPremium;
 		} else {
 			$cruise->bookedFamily = $cruise->bookedFamily + 1;
-			$cruise->availFamily = ($ship->numFamily - $cruise->bookedFamily);
 		}
 	}
 
@@ -53,12 +54,16 @@ class Cruise {
 
 	        $ship = $cruise->ship;
 	        $total_cabins = $ship->numEcon + $ship->numFamily + $ship->numPremium;
+	        $availableEcon = $ship->numEcon - $cruise->bookedEcon;
+	        $availableFamily = $ship->numFamily - $cruise->bookedFamily;
+	        $availablePremium = $ship->numPremium - $cruise->bookedPremium;
+
 	        echo "
 	        <p>Date: $cruise->date</p>
 	        <p>Ship $ship->shipID Total Cabins $total_cabins <br>
-	        	<strong>Economy </strong> booked: $cruise->bookedEcon available: $ship->numEcon<br>
-	        	<strong>Family </strong> booked: $cruise->bookedFamily available: $ship->numFamily<br>
-	        	<strong>Premium </strong> booked: $cruise->bookedPremium available: $ship->numPremium<br>
+	        	<strong>Economy </strong> booked: $cruise->bookedEcon available: $availableEcon total: $ship->numEcon<br>
+	        	<strong>Family </strong> booked: $cruise->bookedFamily available: $availableFamily total: $ship->numFamily<br>
+	        	<strong>Premium </strong> booked: $cruise->bookedPremium available: $availablePremium total: $ship->numPremium<br>
 	        </p>
 	        =======================================";
 		}
